@@ -1,0 +1,131 @@
+.cards-container {
+  display: flex;
+  //margin: 82px auto 32px;
+  padding: 0 16px;
+
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.card-container {
+  height: 340px;
+  border: lightgrey 1px;
+  display: inline-block;
+}
+
+.card {
+  all: unset;
+  border-radius: 34px;
+  //border: 1px solid #eee;
+  background-color: #fff;
+
+  margin: 0 8px 16px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+  box-shadow: 0px 10px 15px -9px rgba(0, 0, 0, 0.1);
+
+  height: 235px;
+  width: 190px;
+  justify-content: end;
+
+  .content{
+    font-size: 0.8rem;
+  }
+  
+  .head {
+    width: 100%;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+  
+    .meta {
+      color: #8f8f8f;
+      font-weight: 400;
+    }
+  
+
+    .state {
+  
+      color: #505050;
+      font-weight: 700;
+      background-color: #ebffeb;
+      border-radius: 6px;
+      font-size: 0.6rem;
+      padding: 0 5px;
+  
+      &.READY {
+        color: #5b9f5b;
+        background-color: #ebffeb;
+      }
+  
+      &.REFRESHING {
+        color: #7e7419;
+        background-color: #fff2c7;
+      }
+  
+      &.FATAL {
+        color: #81000c;
+        background-color: #ffd7db;
+      }
+  
+      &.STOLEN {
+        color: #81000c;
+        background-color: #ffd7db;
+      }
+  
+      &.NONE {
+        color: #4b4b4b;
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}
+
+
+.photo {
+
+  background-image: url(../../../assets/can/easy_can.png);
+
+  &.EASY_BEER {
+    background-image: url(../../../assets/can/easy_can.png);
+  }
+
+  &.LATENCY_BEER {
+    background-image: url(../../../assets/can/latency_can.png);
+  }
+
+  &.STOLEN_BEER {
+    background-image: url(../../../assets/can/stolen_can.png);
+  }
+
+  &.FATAL_BEER {
+    background-image: url(../../../assets/can/fatal_can.png);
+  }
+
+  &.LAZY_BEER {
+    background-image: url(../../../assets/can/lazy_can.png);
+  }
+
+  width: 100%;
+  height: 250px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  /* bottom: 80px; */
+  background-position: center;
+  margin-bottom: -80%;
+}
+
+
+
+
+.dispenser-section{
+  margin-top:35px
+}

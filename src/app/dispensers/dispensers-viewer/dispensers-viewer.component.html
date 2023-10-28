@@ -1,0 +1,93 @@
+
+<h1><span class="material-symbols-outlined">sports_bar</span>Beer dispensers Service</h1>
+
+Welcom to the dispenser service board. You can find bellow the current state of your services
+
+
+<div class="dispenser-section">
+    <h3>
+        <span class="material-symbols-outlined">inventory</span>
+        Visible dispensers
+
+    </h3>
+
+    The <b>visible</b> section contains the beer dispensers currently distributed.
+    
+    <div class="cards-container">
+    
+        <div class="card-container" *ngFor="let dispenser of (dispensers | internalStatusDispenserFilter: 'ACTIVE')" >
+    
+            <div class="photo {{dispenser.beer}}"></div>
+    
+            <div class="card">
+                <div class="head">
+                    <div class="meta">{{dispenser.metadata.createdAt  | date: 'dd/MM/yyyy'}}</div>
+                    <div class="state {{dispenser.state}}">{{dispenser.state}}</div>
+                </div>
+    
+                <div class="content">
+                    <div>Ref : {{dispenser.ref}}</div>
+                    <div>Beer : {{dispenser.beer}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="dispenser-section">
+    <h3> 
+        <span class="material-symbols-outlined">shopping_cart_checkout</span>
+        Pending dispensers
+    </h3>
+
+    The <b>pending</b> section contains the beer dispensers requested but not yet delivered.
+
+    <div class="cards-container">
+        <div class="card-container" *ngFor="let dispenser of (dispensers | internalStatusDispenserFilter: 'PENDING')" >
+        
+            <div class="photo {{dispenser.beer}}"></div>
+
+            <div class="card">
+                <div class="head">
+                    <div class="meta">{{dispenser.metadata.createdAt  | date: 'dd/MM/yyyy'}}</div>
+                    <div class="state {{dispenser.state}}">{{dispenser.state}}</div>
+                </div>
+
+                <div class="content">
+                    <div>Ref : {{dispenser.ref}}</div>
+                    <div>Beer : {{dispenser.beer}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="dispenser-section">
+    <h3>
+        <span class="material-symbols-outlined">delete</span>
+        Archived dispensers
+    </h3>
+
+    The <b>archived</b> section contains the beer dispensers not active anymore (restituated, stolen, request not accepted).
+
+    <div class="cards-container">
+
+        <div class="card-container" *ngFor="let dispenser of (dispensers | internalStatusDispenserFilter: 'ARCHIVED')" >
+
+            <div class="photo {{dispenser.beer}}"></div>
+
+            <div class="card">
+                <div class="head">
+                    <div class="meta">{{dispenser.metadata.createdAt  | date: 'dd/MM/yyyy'}}</div>
+                    <div class="state {{dispenser.state}}">{{dispenser.state}}</div>
+                </div>
+
+                <div class="content">
+                    <div>Ref : {{dispenser.ref}}</div>
+                    <div>Beer : {{dispenser.beer}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
